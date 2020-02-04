@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-02-04T17:55:16Z</date>
+    <groups>
+        <group>
+            <name>redis</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Filas Redis</template>
+            <name>Filas Redis</name>
+            <groups>
+                <group>
+                    <name>redis</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Fila redis</name>
+                </application>
+            </applications>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Filas redis</name>
+                    <key>discovery.redis.queue</key>
+                    <lifetime>180d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>Fila redis {#FILA}</name>
+                            <type>TRAP</type>
+                            <key>fila.redis[{#FILA}]</key>
+                            <delay>0</delay>
+                            <applications>
+                                <application>
+                                    <name>Fila redis</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Fila redis {#FILA}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <item>
+                                        <host>Filas Redis</host>
+                                        <key>fila.redis[{#FILA}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+    </templates>
+</zabbix_export>
