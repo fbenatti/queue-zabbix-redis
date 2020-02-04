@@ -6,7 +6,7 @@ import socket
 import sys
 
 hostname = socket.gethostname()
-redishost=hostname+'.tpn.terra.com'
+redishost=hostname
 redisport="6379"
 
 r = redis.Redis(host=redishost,port=redisport)
