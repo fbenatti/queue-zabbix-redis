@@ -31,7 +31,7 @@ totobjs=0
 for key in listkeys:  
     totitens=(r.llen(key))
     kb = "fila.redis[" + key + "]"
-    data2[kb] = totitens
+    data2[key] = totitens
     totobjs = totobjs + totitens
 
 kb = 'fila.redis[TotalObjetos]'
