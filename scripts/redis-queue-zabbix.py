@@ -32,7 +32,8 @@ totobjs=0
 for key in listkeys:
   if r.type(key) == "list":
     totitens=(r.llen(key))
-    data2[key] = totitens
+    kb = "fila.redis[" + key + "]"
+    data2[kb] = totitens
     totobjs = totobjs + totitens
 
 
